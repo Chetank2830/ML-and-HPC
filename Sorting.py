@@ -2,12 +2,14 @@ Bubble Sort
 import random
 import time
 from datetime import datetime
+
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
         for j in range(n-1):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
+
 def main():
     a = [random.randint(0, 10000) for _ in range(10000)]
     start = datetime.now()
@@ -16,6 +18,7 @@ def main():
     duration = end - start
     print("Serial:", duration)
     a = [random.randint(0, 10000) for _ in range(10000)]
+
     start = datetime.now()
     for i in range(len(a)):
         first = i % 2
@@ -26,7 +29,7 @@ def main():
     duration = end - start
     print("Parallel:", duration)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
 
 
@@ -51,7 +54,7 @@ def mergesort(a, i, j):
             future1.result()
             future2.result()
         merge(a, i, mid, mid + 1, j)
-if _name_ == "_main_":
+if __name__ == "__main__":
     a = [3,44,38,5,47,15,36,26,27,2,46,4,19,1,50,48]
     start_p=time.time()
     mergesort(a, 0, len(a) - 1)
