@@ -5,8 +5,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import confusion_matrix
-dataset=pd.read_csv("F:\iris.csv")
-dataset
+dataset=pd.read_csv("Iris.csv")
+
 X = dataset.iloc[:,:4].values
 y = dataset['Species'].values
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 82)
